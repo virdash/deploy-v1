@@ -54,7 +54,7 @@ Use **virtualenv** to create a virtual environment for the project, Run the foll
   ```source/workspace/bin/activate```
 
 **Install the dependences**
-Run the requirement.txt on the activated workspace
+Run the requirements.txt on the activated workspace
   ```pip install -r requirements.txt```
 
 **Run the application server**
