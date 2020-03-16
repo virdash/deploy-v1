@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500&display=swap');
+
+html, body{
+    font-family: 'Ubuntu', sans-serif;
+    width: 100vw;
+}
+.main{
+    margin: auto;
+}
+.modebar{
+    display: none !important;
+}
+#logo {
+    font-size: 2rem;
+    font-weight: 500;
+}
+a#logo{
+    text-decoration: none;
+}
+a.link{
+    color: #ffffff!important;
+}
+.banner{
+    /* padding-left: 50px; */
+    background-color: #00acee;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    width: 100vw;
+}
+.total{
+    min-height: 6rem;
+}
+.title{
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 15px;
+    color: #777777;
+}
+.total .value{
+    font-size: 36px;
+    text-align: right;
+}
+.confirm{
+    color: rgb(255, 103, 0);
+}
+.recover{
+    color: green;
+}
+.death{
+    color: red;
+}
+.graph{
+    min-height: 12rem;
+}
+.map{
+    min-height: 18rem;
+}
+.world{
+    margin-top: 0;
+}
+.report{
+    text-align: center;
+    padding-top: 1rem;
+    color: rgb(255, 103, 0);
+    min-height: 4.6rem;
+}
+a.report{
+    text-decoration: none;
+}
+.report:hover{
+    background-color: rgb(255, 103, 0);
+    color: #ffffff;
+}
+.news{
+    min-height: 13.4rem;
+}
+.tweets{
+    height: 24.6rem;
+    overflow-y: scroll;
+}
+.tweets .username{
+    font-weight: 500;
+}
+.tweets .handle{
+    font-weight: 400;
+    color: #999999;
+}
+.tweets .text{
+    font-weight: 400;
+}
+.sponsor{
+    min-height: 5.5rem;
+}
+.card{
+    border: none;
+    margin-top: 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 0.05rem 0.1rem 0.3rem #cccccc;
+    transition: box-shadow 0.5s;
+}
+.card:hover{
+    box-shadow: 0.3rem 0.7rem 1.5rem #bbbbbb;
+}
+.contributor{
+    font-size: 15px;
+    margin-bottom: 0;
+    overflow-y: scroll;
+}
+.allColumns{
+    display: flex;
+    justify-content: space-evenly;
+}
+/* html, body { overflow: hidden; } */
+/* .reportPage, reportForm { overflow: hidden; } */
+iframe {
+    height: 100vh;
+    width: 100%;
+    /* position: absolute; */
+    border: none;
+    margin: auto;
+    overflow: hidden!important;
+}
