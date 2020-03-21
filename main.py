@@ -235,7 +235,7 @@ auth.set_access_token(env['access_token'], env['access_token_secret'])
 # creation of the actual interface, using authentication
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
-sources = ["WHO","NCDCgov"]
+sources = ["WHO","NCDCgov","Ecowas_cdc"]
 tweets_list = []
 
 # Get tweets
