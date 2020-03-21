@@ -14,6 +14,7 @@ import time
 import json
 import tweepy
 from datetime import date, time
+import random
 
 # Get data
 confirm = pd.read_csv('data/confirm.csv')
@@ -234,15 +235,38 @@ auth.set_access_token(env['access_token'], env['access_token_secret'])
 # creation of the actual interface, using authentication
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
-search = tweepy.Cursor(api.search, q="#COVID-19" + " -filter:retweets", result_type="recent", lang="en").items(100)
+sources = ["WHO","NCDCgov"]
+tweets_list = []
 
 # Get tweets
-tweets = []
-for item in search:
-    tweets.append({"text":item.text, "date": (item.created_at).date(), "time": (item.created_at).time(), "handle": item.user.screen_name, "username": item.user.screen_name, "url": "https://twitter.com/" + item.user.screen_name + "/status/" + str(item.id) })
+
+for source in sources:
+    tweets = tweepy.Cursor(api.user_timeline,screen_name=source, include_entities=True).items(20)
+
+    for item in tweets:
+        img_url = ""
+
+        if 'media' in item.entities:
+            for image in item.entities['media']:
+                img_url = image['media_url']
+
+        tweets_list.append(
+            {
+                "text":item.text,
+                "date": (item.created_at).date(),
+                "time": (item.created_at).time(),
+                "handle": item.user.screen_name,
+                "username": item.user.screen_name,
+                "url": "https://twitter.com/" + item.user.screen_name + "/status/" + str(item.id),
+                "img_url": img_url,
+            }
+        )
+
+# Shuffle tweets
+random.shuffle(tweets_list)
 
 # Create a cardlike list
-tweetsList = []
+tweetCard = []
 
 def tweetFunc(tweet):
     """
@@ -257,8 +281,8 @@ def tweetFunc(tweet):
         html.Div(tweet['text'], className='text')
     ], className='card container')
 
-for tweet in tweets:
-    tweetsList.append(tweetFunc(tweet))
+for tweet in tweets_list:
+    tweetCard.append(tweetFunc(tweet))
 
 
 external_stylesheets = ['https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css']
@@ -370,7 +394,7 @@ index = html.Div([
         # Tweet
         html.Div([
             html.P(['Tweets'], className='title'),
-            html.Div(tweetsList, className='tweetList')
+            html.Div(tweetCard, className='tweetList')
         ], className='tweets card container'),
 
         # Contributors
