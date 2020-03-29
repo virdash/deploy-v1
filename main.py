@@ -78,15 +78,20 @@ total_recovered = total_card(get_recover)
 total_death = total_card(get_death)
 
 contributor = """
-Solomon Igori🇳🇬,
-Bright Morkli🇬🇭,
-Ehigiator Klinton🇳🇬,
-Gabriel Addo🇬🇭,
-Boris Bizo🇬🇦,
-Mawusime Aglago🇬🇭,
-Daouda Tandiang DJIBA🇸🇳,
-Abdul Jalal Mohammed🇬🇭,
-John Bagiliko🇬🇭
+    Solomon Igori🇳🇬,
+    Bright Morkli🇬🇭,
+    Ehigiator Klinton🇳🇬,
+    Boris Bizo🇬🇦,
+    Daouda Tandiang DJIBA🇸🇳,
+    Susan Ofeimun🇳🇬,
+    Mawusime Aglago🇬🇭,
+    Precious Omamode🇳🇬,
+    Gabriel Addo🇬🇭,
+    John Bagiliko🇬🇭,
+    Kayode Daniel🇳🇬,
+    Suleman Mahmoud Junior🇬🇭,
+    Caesar🇳🇬,
+    Abdul Jalal Mohammed🇬🇭,
 """
 
 line = go.Figure()
